@@ -1,0 +1,63 @@
+.button-get {
+  position: absolute;
+  height: 128px;
+  width: 128px;
+  font-family: "Montreal", sans-serif;
+  background-color: #f3f3f3;
+  color: #14191e;
+  padding: 15px 24px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1000;
+  overflow: hidden;
+  transition: color 0.8s ease-in-out;
+  margin-top: 190px;
+  margin-left: 850px;
+}
+
+.button-get::before {
+  content: "";
+  position: absolute;
+  bottom: -200%; /* Start well below the button */
+  left: 50%;
+  transform: translateX(-50%) scale(0.5); /* Start smaller and centered */
+  width: 200%; /* Large enough to cover the button */
+  height: 200%; /* Large enough to cover the button */
+  background-color: #4a4a58;
+  border-radius: 50%; /* Circle shape */
+  transition: transform 0.8s ease-in-out, bottom 0.8s ease-in-out; /* Match transition times */
+  z-index: -1;
+}
+
+.button-get:hover::before {
+  bottom: 0;
+  transform: translateX(-50%) scale(2);
+}
+.button-get:hover {
+  color: #f3f3f3;
+}
+
+.button-get:not(:hover)::before {
+  bottom: -200%; /* Reset the position to below the button */
+  transform: translateX(-50%) scale(0.5); /* Shrink the circle */
+}
+.button-get .text {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .button-get {
+    height: 160px;
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-get {
+    margin-left: 400px;
+    margin-top: 155px;
+  }
+}

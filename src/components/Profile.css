@@ -1,0 +1,199 @@
+/* Define the font using @font-face */
+@font-face {
+  font-family: "Montreal";
+  src: url("../fonts/Montreal.otf") format("otf");
+  font-weight: 40;
+}
+
+@font-face {
+  font-family: "Roboto-r";
+  src: url("../fonts/Roboto-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto-m";
+  src: url("../fonts/Roboto-Medium.ttf") format("ttf");
+}
+
+.absolute {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  display: flex;
+  width: 230vw;
+  height: 300px;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.item {
+  flex: 0 0 50%;
+  font-family: "Robot-r", sans-serif;
+  font-size: 200px;
+  font-weight: 40;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.profile-image-wrap {
+  background-color: #999d9e;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 120%;
+  width: 120%;
+  transform: translate(-50%, -50%);
+  display: block;
+  overflow: hidden;
+}
+
+.profile-image {
+  top: -7%;
+  width: full;
+  height: 110%;
+  background: #a53860;
+  object-fit: cover;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+}
+
+@media screen and (max-width: 720px) {
+  .profile-image {
+    top: -7px;
+    height: 110%;
+    width: auto;
+  }
+  .item {
+    flex-shrink: 0;
+    width: 170%;
+    font-size: 200px;
+    height: 400px;
+    border-radius: 6px;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .text-container1 {
+    gap: 10px;
+  }
+}
+
+.hanger {
+  position: absolute;
+}
+
+.text-container {
+  font-family: "Roboto-r", sans-serif;
+  position: absolute;
+  font-size: 20px;
+  left: 40px;
+  top: 40px;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.text-container1 {
+  font-family: "Roboto-r", sans-serif;
+  position: absolute;
+  font-size: 18px;
+  right: 30px;
+  top: 40px;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-inline: 20px;
+}
+
+.text-wrapper {
+  font-family: "Roboto-r", sans-serif;
+  position: relative;
+  overflow: hidden;
+  height: 1.3em;
+}
+
+.main-text {
+  font-size: 1rem;
+  display: block;
+  transition: transform 500ms;
+  margin-top: 2px;
+}
+
+.hover-text {
+  transition: transform 250ms;
+  transform: translateY(100%);
+  position: absolute;
+  top: 0;
+  left: 2.5px;
+  white-space: nowrap;
+  font-size: 1.1rem;
+}
+
+/* Hover effect */
+.text-container:hover .main-text {
+  transform: translateY(-100%);
+}
+
+.text-container:hover .hover-text {
+  transform: translateY(0%);
+}
+
+.copyright1 {
+  margin-left: 10px;
+  height: 15px;
+}
+
+@keyframes rotateFull {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.text-container:hover .copyright1 {
+  animation: rotateFull 500ms ease-in-out;
+}
+
+.arrow-container {
+  position: absolute;
+  top: 35%;
+  left: 70%;
+}
+
+.arrow-image {
+  width: 35px;
+  height: auto;
+  margin-bottom: 10px;
+}
+.description {
+  margin-top: 50px;
+  font-family: "Roboto-r", sans-serif;
+}
+
+.engineer-text {
+  font-size: 25px;
+  color: #fff;
+  text-align: left;
+}

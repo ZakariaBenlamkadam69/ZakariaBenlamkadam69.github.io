@@ -1,0 +1,225 @@
+@font-face {
+  font-family: "Montreal";
+  src: url("../fonts/Montreal.otf") format("otf");
+  font-weight: 40;
+}
+
+@font-face {
+  font-family: "Roboto-r";
+  src: url("../fonts/Roboto-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto-m";
+  src: url("../fonts/Roboto-Medium.ttf") format("ttf");
+}
+body {
+  height: 80%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  color: #14191e;
+}
+
+.landing-container {
+  min-height: 60vh;
+  background: #f3f3f3;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.text-section {
+  font-family: "Roboto-r", sans-serif;
+  max-width: 600px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 12rem;
+  margin-top: 8rem;
+}
+
+.main-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.main-subtitle {
+  font-size: 1.5rem;
+}
+
+.button-section {
+  margin-top: 5.5rem;
+  font-family: "Montreal";
+  text-align: center;
+  margin-right: 12rem;
+}
+
+.description {
+  text-align: left;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.about-button {
+  font-family: "Montreal";
+  background-color: #14191e;
+  color: #f3f3f3;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.about-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.about-content {
+  font-family: "Montreal";
+  background: #14191e;
+  color: #f3f3f3;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-description {
+  margin-bottom: 20px;
+}
+
+.about-button {
+  font-family: "Montreal", sans-serif;
+  background-color: #4a4a58;
+  color: #f3f3f3;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease; /* Added transform transition */
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
+  padding: 5rem;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin-left: 25px;
+  margin-top: 25px;
+}
+.about-button .text-abt {
+  font-family: "Montreal";
+  position: relative; /* Allow positioning with GSAP */
+  z-index: 1; /* Keep the text above the background */
+}
+.magneto .text {
+  font-family: "Montreal";
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  color: #d33939;
+}
+
+.about-button::before {
+  content: "";
+  position: absolute;
+  bottom: -120%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 120%;
+  background-color: #14191e;
+  border-radius: 50%;
+  transition: bottom 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.about-button:hover::before {
+  bottom: 0; /* Bring the circle up on hover */
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+  }
+
+  .text-section {
+    width: 70%;
+    text-align: left;
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .main-subtitle {
+    font-size: 2rem;
+  }
+
+  .button-section {
+    width: 18%;
+    text-align: right;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-section {
+    margin-left: 0;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .main-title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .description {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .button-section {
+    margin: 0;
+    text-align: center;
+  }
+  .about-button {
+    margin-top: 50px;
+    margin-left: 200px;
+  }
+}

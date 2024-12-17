@@ -1,0 +1,94 @@
+/* Define the font using @font-face */
+@font-face {
+  font-family: "Montreal";
+  src: url("../fonts/Montreal.otf") format("otf");
+  font-weight: 40;
+}
+
+@font-face {
+  font-family: "Roboto-r";
+  src: url("../fonts/Roboto-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Roboto-m";
+  src: url("../fonts/Roboto-Medium.ttf") format("ttf");
+}
+
+.text-container2 {
+  font-family: "Roboto-r", sans-serif;
+  position: absolute;
+  font-size: 20px;
+  left: 80px;
+  top: 40px;
+  color: #000;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.text-container1 {
+  font-family: "Roboto-r", sans-serif;
+  position: absolute;
+  font-size: 18px;
+  right: 30px;
+  top: 40px;
+  color: #000;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-inline: 20px;
+}
+
+.text-wrapper {
+  font-family: "Roboto-r", sans-serif;
+  position: relative;
+  overflow: hidden;
+  height: 1.3em;
+}
+
+.main-text {
+  font-size: 1rem;
+  display: block;
+  transition: transform 500ms;
+  margin-top: 2px;
+}
+
+.hover-text {
+  transition: transform 250ms;
+  transform: translateY(100%);
+  position: absolute;
+  top: 0;
+  left: 2.5px;
+  white-space: nowrap;
+  font-size: 1.1rem;
+}
+
+/* Hover effect */
+.text-container2:hover .main-text {
+  transform: translateY(-100%);
+}
+
+.text-container2:hover .hover-text {
+  transform: translateY(0%);
+}
+
+.copyright1 {
+  margin-left: 10px;
+  height: 15px;
+}
+
+@keyframes rotateFull {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.text-container2:hover .copyright1 {
+  animation: rotateFull 500ms ease-in-out;
+}
