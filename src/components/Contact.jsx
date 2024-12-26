@@ -107,6 +107,75 @@ function Contact() {
     };
   }, []);
 
+  useEffect(() => {
+    const button = document.querySelector('.send-button');
+    
+    // If button text needs to be targeted separately, ensure it exists and select it
+    const buttonText = button ? button.querySelector('.text') : null;
+    
+    const activateMagneto = (event, element, strength) => {
+      let boundBox = element.getBoundingClientRect();
+      const newX = ((event.clientX - boundBox.left) / element.offsetWidth) - 0.5;
+      const newY = ((event.clientY - boundBox.top) / element.offsetHeight) - 0.5;
+  
+      // Apply the magnet effect on the button
+      gsap.to(element, {
+        duration: 1,
+        x: newX * strength,
+        y: newY * strength,
+        ease: 'power4.out'
+      });
+  
+      // Apply the magnet effect on the text, if it exists
+      if (buttonText) {
+        gsap.to(buttonText, {
+          duration: 1,
+          x: newX * strength,
+          y: newY * strength,
+          ease: 'power4.out'
+        });
+      }
+    };
+  
+    const resetMagneto = (element, textElement) => {
+      gsap.to(element, {
+        duration: 1,
+        x: 0,
+        y: 0,
+        ease: 'power4.out'
+      });
+  
+      if (textElement) {
+        gsap.to(textElement, {
+          duration: 1,
+          x: 0,
+          y: 0,
+          ease: 'power4.out'
+        });
+      }
+    };
+  
+    const handleButtonMouseMove = (event) => {
+      if (button) {
+        activateMagneto(event, button, 30); // Apply the effect to the button
+      }
+    };
+  
+    if (button) {
+      button.addEventListener('mousemove', handleButtonMouseMove);
+      button.addEventListener('mouseleave', () => resetMagneto(button, buttonText));
+    }
+  
+    return () => {
+      if (button) {
+        button.removeEventListener('mousemove', handleButtonMouseMove);
+        button.removeEventListener('mouseleave', () => resetMagneto(button, buttonText));
+      }
+    };
+  }, []);
+  
+  
+
   return (
     <div className="min-h-screen bg-[#1C1C1C] text-white p-6">
       <header className="flex items-center justify-between px-6 py-4 max-w-[1400px] mx-auto">
@@ -236,9 +305,9 @@ function Contact() {
             <div className="flex justify-center pt-16">
               <button
                 type="submit"
-                className="w-32 h-32 rounded-full bg-[#4B4AEF] hover:bg-[#3938CB] transition-colors text-white flex items-center justify-center text-lg"
+                className="send-button"
               >
-                Send it!
+                <span className="text">Send it!</span>
               </button>
             </div>
           </form>
@@ -301,11 +370,8 @@ function Contact() {
 
       {/* Footer */}
       <footer className="mt-32 flex justify-between text-sm text-gray-500">
-        <div className="flex space-x-8">
-          <span>2022 © Edition</span>
-          <span>12:43 PM GMT+1</span>
-        </div>
-        <div className="flex space-x-8">
+        
+        <div className="flex space-x-8 right-3">
           
           <a href="#" className="hover:text-gray-300">
             Instagram

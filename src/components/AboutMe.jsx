@@ -65,7 +65,7 @@ const AboutMe = () => {
   }, []);
   
   useEffect(() => {
-    const elements = document.querySelectorAll('.magneto-text'); 
+    const elements = document.querySelectorAll('.magneto-text1'); 
   
     const activateMagneto = (event, element, strength) => {
       const bounds = element.getBoundingClientRect();
@@ -102,9 +102,9 @@ const AboutMe = () => {
 
       <div className="text-container1">
         {/* Add Links for Navigation */}
-        <Link to="/work" className="magneto-text">Work</Link>
-        <Link to="/about" className="magneto-text">About</Link>
-        <Link to="/contact" className="magneto-text">Contact</Link>
+        <Link to="/work" className="magneto-text1">Work</Link>
+        <Link to="/about" className="magneto-text1">About</Link>
+        <Link to="/contact" className="magneto-text1">Contact</Link>
       </div>
 
       <Link to="/" className="text-container2" style={{ textDecoration: "none" }}>
@@ -157,32 +157,27 @@ const AboutMe = () => {
         <div className="grid md:grid-cols-3 gap-12">
           <div className="space-y-6">
             <span className="text-sm text-gray-500">01</span>
-            <h3 className="text-2xl">Design</h3>
+            <h3 className="text-2xl">Data Analysis <span className="text-2xl">✦</span></h3>
             <p className="text-gray-600 leading-relaxed">
-              With a solid track record in designing websites, I deliver strong and
-              user-friendly digital designs. (Since 2024 only in combination with
-              development)
+              With a solid foundation in data analysis, I excel at extracting actionable insights, delivering data-driven solutions, and transforming complex datasets into clear, impactful visualizations.
             </p>
           </div>
           <div className="space-y-6">
             <span className="text-sm text-gray-500">02</span>
-            <h3 className="text-2xl">Development</h3>
+            <h3 className="text-2xl">Data Science <span className="text-2xl">✦</span></h3>
+            
             <p className="text-gray-600 leading-relaxed">
-              I build scalable websites from scratch that fit seamlessly with
-              design. My focus is on micro animations, transitions and interaction.
-              Building with Webflow (or Kirby CMS).
+            With a strong passion for uncovering patterns in data, I specialize in using machine learning, deep learning, AI, and NLP to turn raw information into meaningful insights and innovative solutions.
             </p>
           </div>
           <div className="space-y-6">
             <span className="text-sm text-gray-500">03</span>
             <div className="flex items-center gap-2">
-              <h3 className="text-2xl">The full package</h3>
+              <h3 className="text-2xl">Data Engineering</h3>
               <span className="text-2xl">✦</span>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              A complete website from concept to implementation, that's what makes
-              me stand out. My great sense for design and my development skills
-              enable me to create kick-ass projects.
+            With a strong foundation in data engineering, I specialize in designing and building scalable data pipelines, ensuring seamless data flow, and transforming complex datasets into structured, accessible information to support data-driven decisions.
             </p>
           </div>
         </div>

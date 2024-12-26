@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import sidebar from './Images/equal.png';
 import './MagnetoButton.css';
 
-const MagnetoButton = ({ isVisible }) => {
+const MagnetoButton = ({ isVisible, toggleSidebar }) => {
   const buttonRef = useRef();
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const MagnetoButton = ({ isVisible }) => {
   }, []);
 
   return (
-    <button className="magneto3" ref={buttonRef}>
+    <button className="magneto3" ref={buttonRef} onClick={toggleSidebar}>
       <img src={sidebar} className="text3" alt="Magneto Button" />
     </button>
   );

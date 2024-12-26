@@ -1,9 +1,14 @@
+
+
+/* Main wrapper that allows scrolling but hides the scrollbar */
 .no-scrollbar {
-    overflow-y: scroll; /* Keeps scroll functionality */
-    -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer and Edge */
-    scrollbar-width: none; /* Hides scrollbar in Firefox */
-  }
-  
-  .no-scrollbar::-webkit-scrollbar {
-    display: none; /* Hides scrollbar in Chrome, Safari, and Opera */
-  }
+  height: 100%; /* Ensure it takes full height */
+  overflow: auto; /* Enable scrolling functionality */
+  -ms-overflow-style: none; /* Hide scrollbar in Internet Explorer and Edge */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Hide scrollbar in Webkit-based browsers (Chrome, Safari, Opera) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}

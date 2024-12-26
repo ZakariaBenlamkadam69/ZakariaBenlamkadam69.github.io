@@ -8,6 +8,7 @@ import MagnetoButton from './MagnetoButton';
 
 export default function Main() {
   const [isButtonVisible, setIsButtonVisible] = useState(true);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
 
   useEffect(() => {
     const evaluateVisibility = () => {
@@ -39,6 +40,14 @@ export default function Main() {
       clearTimeout(debounceTimeout);
     };
   }, []);
+
+  useEffect(() => {
+    if (sidebarVisible) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [sidebarVisible]);
   
 
   return (
@@ -47,7 +56,20 @@ export default function Main() {
       <About />
       <Projects />
       <Footer />
-      <MagnetoButton isVisible={isButtonVisible} />
+      <MagnetoButton isVisible={isButtonVisible} toggleSidebar={() => setSidebarVisible(!sidebarVisible)} />
+      {sidebarVisible && (
+        <>
+          <div className="overlay" onClick={() => setSidebarVisible(false)} />
+          <div className="sidebar">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/work">Work</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+        </>
+      )}
     </div>
   );
 }

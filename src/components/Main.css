@@ -7,3 +7,58 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Hides scrollbar in Chrome, Safari, and Opera */
 }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.sidebar a:hover {
+  color: #00bcd4;
+}
+
+/* Overlay for the Sidebar */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05); /* 10% opacity */
+  z-index: 999; /* Below the sidebar but above everything else */
+  backdrop-filter: blur(1px); /* Optional blur for added effect */
+}
+
+/* Prevent scrolling on the body when the sidebar is open */
+body.no-scroll {
+  overflow: hidden;
+}
