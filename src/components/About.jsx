@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import './About.css';
 
 export default function About() {
-  const [isAboutVisible, setIsAboutVisible] = useState(false);
 
   useEffect(() => {
     const magneto = document.querySelector('.about-button');
@@ -76,9 +75,6 @@ export default function About() {
 
         
       </main>
-
-      
-
 
       
     </div>

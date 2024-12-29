@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import copyright from './Images/copyright.png';
 import { Link } from "react-router-dom"; 
 import { useEffect } from "react";
+import emailjs from 'emailjs-com';
 import gsap from 'gsap';
 import './Contact.css'
 
@@ -21,10 +22,26 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    
-  };
 
+    // Send email using EmailJS
+    emailjs
+      .send(
+        'service_8r2mxey', // Your EmailJS service ID
+        'template_snmg0nu', // Your EmailJS template ID
+        formData, // Your form data
+        'NgJpq_ofKPyQO1xhb' // Your EmailJS user ID
+      )
+      .then(
+        (response) => {
+          console.log('Email successfully sent!', response);
+          alert('Your message has been sent successfully!');
+        },
+        (error) => {
+          console.error('Failed to send email:', error);
+          alert('Failed to send your message. Please try again.');
+        }
+      );
+  };
   useEffect(() => {
     const textContainer = document.querySelector('.text-container3');
     

@@ -93,7 +93,7 @@ const AboutMe = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen ">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4 max-w-[1400px] mx-auto">
         

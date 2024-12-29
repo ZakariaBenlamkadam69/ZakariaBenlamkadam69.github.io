@@ -5,27 +5,27 @@ import { gsap } from 'gsap';
 function Projects() {
   const projects = [
     {
-      title: "Data Pipeline Automation",
-      category: "Data Engineering",
-      href: "#",
+      title: "Moroccan Universities Scopus Analysis",
+      category: "Data Engineering / Data Analysis",
+      href: "https://github.com/ZakariaBenlamkadam/scopus-articles",
       image: "./architecture.png",
     },
     {
-      title: "ML Model Deployment",
-      category: "Machine Learning",
-      href: "#",
+      title: "MediAi Health Analysis",
+      category: "Data Engineering / Data Analysis",
+      href: "https://github.com/ZakariaBenlamkadam/HealthAI-Patents-Insight",
       image: "./architecture.png",
     },
     {
-      title: "Real-time Analytics Platform",
+      title: "Morrocan Content Opinion Poll",
       category: "Data Analytics",
-      href: "#",
+      href: "https://github.com/ZakariaBenlamkadam/morrocan-content",
       image: "./architecture.png",
     },
     {
-      title: "ETL Framework Development",
-      category: "Data Engineering",
-      href: "#",
+      title: "Predict Winning Products",
+      category: "Machine Learning",
+      href: "https://github.com/ZakariaBenlamkadam/Predict_Winning_Product",
       image: "./architecture.png",
     },
   ];
@@ -98,6 +98,8 @@ function Projects() {
             >
               <a
                 href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group grid grid-cols-1 md:grid-cols-2 items-center gap-4 py-8"
               >
                 <h3 className="text-3xl md:text-5xl lg:text-4xl ml-[20%] font-bold tracking-tight transition-colors group-hover:text-muted-foreground">
@@ -114,7 +116,7 @@ function Projects() {
 
         <div className="center-button-container">
           <button className="center-button">
-            <span className="text">More Projects</span>
+            <a href="/work" className="text">More Projects</a>
           </button>
         </div>
       </div>
