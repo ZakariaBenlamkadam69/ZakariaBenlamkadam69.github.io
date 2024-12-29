@@ -68,33 +68,16 @@ export default function About() {
           <p className="description">
             The combination of my passion for analysis and visualization positions me to transform complexity into clarity and impactful decisions.
           </p>
-          <button
-            onClick={() => setIsAboutVisible(!isAboutVisible)}
-            className="about-button"
-          >
-            <span className="text">About me</span> 
+          <button className="about-button">
+            <a href="/about" className="text">About me</a>
           </button>
+
         </div>
 
         
       </main>
 
-      {isAboutVisible && (
-        <div className="about-modal">
-          <div className="about-content">
-            <h2 className="about-title">About Me</h2>
-            <p className="about-description">
-              I'm a passionate web designer and developer with a keen eye for detail and a love for creating cutting-edge digital experiences. My unique blend of design and technical skills allows me to bridge the gap between aesthetics and functionality.
-            </p>
-            <button
-              onClick={() => setIsAboutVisible(false)}
-              className="close-button"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+      
 
 
       

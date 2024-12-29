@@ -8,57 +8,126 @@
   display: none; /* Hides scrollbar in Chrome, Safari, and Opera */
 }
 
+/* Sidebar container */
 .sidebar {
   position: fixed;
   top: 0;
   right: 0;
-  width: 400px;
+  width: 500px;
   height: 100%;
   background-color: #333;
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 20px; /* Add padding for spacing */
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   z-index: 1000;
-  transform: translateX(0);
-  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  justify-content: flex-start; /* Align content at the top */
+  gap: 16px; /* Add spacing between sections */
+  visibility: visible; /* Ensures the sidebar remains visible during animation */
+  opacity: 1;
 }
 
 .sidebar ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
+  margin-top: -40px;
+  margin-left: 20px;
 }
 
 .sidebar li {
-  margin: 20px 0;
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  will-change: transform; /* Improves animation performance */
+}
+.sidebar .sidebar-li {
+  font-size: 2rem;
 }
 
 .sidebar a {
   color: white;
   text-decoration: none;
-  font-size: 1.2rem;
+  padding: 10px 20px; /* Add padding inside the links */
+  display: inline-block; /* Ensure padding works properly */
   transition: color 0.3s;
 }
 
-.sidebar a:hover {
-  color: #00bcd4;
+.sidebar.visible {
+  animation-name: bounceIn;
 }
 
-/* Overlay for the Sidebar */
+.sidebar.hidden {
+  animation-name: bounceOut;
+  visibility: hidden; /* Hides the sidebar after the animation ends */
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0s 0.5s;
+}
+.socials {
+  margin-top: 60px;
+}
+
+/* Overlay styling */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.05); /* 10% opacity */
-  z-index: 999; /* Below the sidebar but above everything else */
-  backdrop-filter: blur(1px); /* Optional blur for added effect */
+  background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Keyframes for animations */
+@keyframes bounceIn {
+  0% {
+    transform: translateX(100%);
+  }
+  60% {
+    transform: translateX(-10%);
+  }
+  80% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(5%);
+  }
+  40% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 /* Prevent scrolling on the body when the sidebar is open */
 body.no-scroll {
   overflow: hidden;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 400px;
+  }
 }
