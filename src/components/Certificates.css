@@ -1,0 +1,138 @@
+.certificate-card {
+  position: relative;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 100%; /* Set to 100% for responsiveness */
+  max-width: 500px; /* Limit the max width */
+  height: 450px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  flex: 0 0 auto;
+  box-sizing: border-box; /* Ensure padding is included in the width/height */
+}
+
+.certificate-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, transform 0.1s ease-in-out;
+  filter: blur(30px);
+}
+
+.certificate-card:hover {
+  transform: scale(1.05);
+}
+
+.certificate-card:hover::before {
+  opacity: 0.6;
+}
+
+.certificate-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.certificate-title {
+  font-size: 1.25rem;
+  color: #d5cfe1;
+  margin: 10px 0;
+}
+
+.featured-certificates {
+  position: relative;
+  overflow: hidden;
+}
+
+.certificate-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.certificate-line {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: moveLeftToRight 30s linear infinite;
+
+}
+
+.certificate-grid:hover .certificate-line {
+  animation-play-state: paused;
+}
+
+
+
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.certificate-grid:hover .line-1,
+.certificate-grid:hover .line-2 {
+  animation-play-state: paused;
+}
+
+.cursor-circle {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.2s ease;
+  filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  .certificate-card {
+    width: 100%; /* Adjust for smaller screens */
+    height: 350px;
+  }
+
+  .certificate-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-card {
+    width: 100%; /* Adjust for smaller screens */
+    height: 320px;
+    padding: 15px;
+  }
+
+  .certificate-title {
+    font-size: 1rem;
+  }
+}

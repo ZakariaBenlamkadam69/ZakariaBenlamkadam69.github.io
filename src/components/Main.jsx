@@ -9,6 +9,19 @@ import gsap from 'gsap';
 
 
 export default function Main() {
+  const [circlePosition, setCirclePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    setCirclePosition({ x: e.clientX, y: e.clientY });
+  };
+
+  // Attach the mouse move event listener when the component mounts
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
   const [isButtonVisible, setIsButtonVisible] = useState(true);
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
@@ -129,27 +142,24 @@ export default function Main() {
             <li className='sidebar-li'><a href="/contact">Contact</a></li>
           </ul>
           <div className="socials">
-  <p className="text-[0.7rem] text-zinc-500 mx-6">SOCIALS</p>
-  <div className="flex flex-wrap gap-[-20px] mt-4  ">
-    <a href="https://www.awwwards.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Medium</a>
-    <a href="https://www.instagram.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Instagram</a>
-    <a href="https://twitter.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Github</a>
-    <a href="https://www.linkedin.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-  </div>
-</div>
-
-
+            <p className="text-[0.7rem] text-zinc-500 mx-6">SOCIALS</p>
+            <div className="flex flex-wrap gap-[-20px] mt-4  ">
+              <a href="https://www.awwwards.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Medium</a>
+              <a href="https://www.instagram.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://twitter.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Github</a>
+              <a href="https://www.linkedin.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
         </div>
-
-        
-
-
-        
-      
-    
-
         </>
       )}
+      <div
+        className="cursor-circle"
+        style={{
+          left: `${circlePosition.x}px`,
+          top: `${circlePosition.y}px`,
+        }}
+      />
     </div>
   );
 }
