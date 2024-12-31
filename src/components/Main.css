@@ -133,14 +133,14 @@ body.no-scroll {
 }
 .cursor-circle {
   position: fixed;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background-color: #333 !important;
   color: #333;
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: background-color 0.2s ease;
-  filter: blur(2px);
-  opacity: 0.7;
+  filter: blur(10px);
+  opacity: 0.5;
 }

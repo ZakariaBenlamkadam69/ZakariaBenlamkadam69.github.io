@@ -3,8 +3,8 @@ import './Certificates.css';
 
 const Certificates = () => {
   const certificateNames = [
-    "Certificate 1", "Certificate 2", "Certificate 3", "Certificate 4", 
-    "Certificate 5", "Certificate 6", "Certificate 7", "Certificate 8"
+    "Introduction to Data Engineering", "Python for Data Science & Development", "Python Project for Data Engieering", "Supervised Machine Learning: Regression and Classification", 
+    "Preparing Data for Analysis with Microsoft Excel", "Harnessing the Power of Data with Power BI", "Extract, Transform and Load Data in Power BI", "Certificate 8"
   ];
 
   // Each certificate image should only exist once

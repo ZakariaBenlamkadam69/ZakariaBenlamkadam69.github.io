@@ -117,7 +117,7 @@
 @media (max-width: 768px) {
   .certificate-card {
     width: 100%; /* Adjust for smaller screens */
-    height: 350px;
+    height: 440px;
   }
 
   .certificate-title {
@@ -128,7 +128,7 @@
 @media (max-width: 480px) {
   .certificate-card {
     width: 100%; /* Adjust for smaller screens */
-    height: 320px;
+    height: 440px;
     padding: 15px;
   }
 

@@ -103,3 +103,45 @@
     right: 25px;
   }
 }
+.hover-container {
+  position: relative;
+  width: 500px; /* Set the width of the container */
+  height: 400px; /* Set a fixed height matching the aspect ratio of your images */
+  overflow: hidden;
+  margin-left: 2rem; /* Prevent images from overflowing */
+}
+
+.image,
+.image-hover {
+  position: absolute; /* Stack the images */
+  top: 0;
+  left: 0;
+  height: 400px; /* Match the container height */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  transition: opacity 0.8s ease-in-out; /* Smooth fade effect */
+  object-fit: cover;
+  border-radius: 0.5rem; /* Adjust for your preferred rounded corners */
+  width: 500px;
+}
+
+.image-hover {
+  opacity: 0; /* Hide the second image initially */
+}
+
+.hover-container:hover .image-hover {
+  opacity: 1; /* Show the second image on hover */
+}
+
+.hover-container:hover .image {
+  opacity: 0; /* Hide the first image on hover */
+}
+.icon-container .icon {
+  width: 2.5rem; /* Equivalent to w-10 */
+  height: 5rem; /* Equivalent to h-20 */
+  color: #4169e1; /* Initial color */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+.icon-container .icon:hover {
+  color: #333; /* Color on hover */
+}

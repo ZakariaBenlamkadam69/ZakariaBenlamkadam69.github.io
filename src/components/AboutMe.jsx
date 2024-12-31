@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import copyright from './Images/copyright1.png';
 import MagnetoButton from './MagnetoButton';
 import Certificates from './Certificates'
+import ExtracurricularActivities from './ExtracurricularActivities'
 
 
 const AboutMe = () => {
@@ -226,18 +227,27 @@ const AboutMe = () => {
 
       {/* Description Section */}
       <section className="px-6 py-12 max-w-[1400px] mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div className="relative overflow-hidden ml-8">
-        <img
-          src="/me.jpg"
-          alt="City landscape"
-          className="object-cover rounded-lg"
-          style={{ width: '500px', height: 'auto' }}
-        />
-      </div>
+      <div className="hover-container">
+  <img
+    src="/me.jpg"
+    alt="City landscape"
+    className="image"
+  />
+  <img
+    src="/me-hover.jpg"
+    alt="Alternate landscape"
+    className="image-hover"
+  />
+</div>
+
+
   {/* Description Section */}
   <div className="space-y-6">
     <div className="flex items-start gap-4">
-      <FaGlobe className="w-10 h-20 text-[#4169E1]" />
+      <div class="icon-container">
+        <FaGlobe className="icon" />
+      </div>
+
     </div>
     <p className="text-xl leading-relaxed text-gray-800">
       The combination of my passion for analysis and visualization positions me to transform complexity into clarity and impactful decisions.
@@ -245,7 +255,6 @@ const AboutMe = () => {
     <p className="text-lg text-gray-600">Always exploring</p>
   </div>
 
-  {/* Image Section */}
   
 </section>
 
@@ -301,7 +310,7 @@ const AboutMe = () => {
           ))}
         </div>
       </section>
-
+      <ExtracurricularActivities/>
       <Certificates/>
 
       {/* Call to Action Section */}
