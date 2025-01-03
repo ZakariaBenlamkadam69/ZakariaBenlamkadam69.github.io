@@ -7,13 +7,13 @@ function Projects() {
     {
       title: "Moroccan Universities Scopus Analysis",
       category: "Data Engineering / Data Analysis",
-      href: "https://github.com/ZakariaBenlamkadam/scopus-articles",
+      href: "https://zakariabenlamkadam.github.io/moroccan-analysis-web/",
       image: "./architecture.png",
     },
     {
       title: "MediAi Health Analysis",
       category: "Data Engineering / Data Analysis",
-      href: "https://github.com/ZakariaBenlamkadam/HealthAI-Patents-Insight",
+      href: "https://zakariabenlamkadam.github.io/mediai-web/",
       image: "./architecture.png",
     },
     {
@@ -25,7 +25,7 @@ function Projects() {
     {
       title: "Predict Winning Products",
       category: "Machine Learning",
-      href: "https://github.com/ZakariaBenlamkadam/Predict_Winning_Product",
+      href: "https://github.com/ZakariaBenlamkadam/Classification_Products",
       image: "./architecture.png",
     },
   ];

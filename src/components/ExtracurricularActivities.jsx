@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ExtracurricularActivities.css';
 
 const images = [
-  
+  "/us.jpg",
   "/us1.jpg",
   "/us2.jpg",
   "/us3.jpg",
@@ -11,20 +11,20 @@ const images = [
 
 const roles = [
   {
-    title: "Club Designer",
-    description: "Led the design team for the university's art club, creating posters and promotional materials for events and exhibitions."
+    title: "Event Organizer - Tech Experience 6.0",
+    description: "Organized and coordinated a university tech event, managing logistics, creating promotional materials, and ensuring smooth execution to engage and inspire attendees."
   },
   {
-    title: "Event Organizer",
-    description: "Coordinated and managed the annual charity run, raising over $10,000 for local community projects."
+    title: "Club Designer - Datai Club",
+    description: "Served as the Club Designer for Datai Club, crafting visually engaging materials and digital assets to enhance branding and promote club activities effectively"
   },
   {
-    title: "Debate Team Captain",
-    description: "Led the debate team to regional finals, mentoring new members and developing strategic argument techniques."
+    title: "Club Designer - CCT Club",
+    description: "Worked as a Designer and one of Team Leaders of the club, contributing to event and trip organization by creating promotional designs and supporting seamless event coordination."
   },
   {
-    title: "Volunteer Coordinator",
-    description: "Organized and managed a team of 50+ volunteers for various community service projects throughout the academic year."
+    title: "Member of TGD Club - THE GREAT DEBATERS",
+    description: "Actively participated as a member of The Club, enhancing public speaking and debate skills through training sessions, engaging in debates, and representing the club in competitions."
   }
 ];
 
@@ -34,9 +34,9 @@ export default function ExtracurricularActivities() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage(prevImage => (prevImage + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
+    }, 5000); 
 
-    return () => clearInterval(interval); // Clean up interval on component unmount
+    return () => clearInterval(interval); 
   }, []);
 
   
@@ -70,9 +70,10 @@ export default function ExtracurricularActivities() {
                   {roles.map((role, index) => (
                     <li key={index}>
                       <h3 className="text-lg leading-6 font-medium text-gray-900 group">
-                        <span className="inline-block transition duration-300 ease-in-out border-b-2 border-transparent group-hover:border-indigo-500">
-                          {role.title}
-                        </span>
+                      <span className="inline-block transition duration-300 ease-in-out group-hover:text-indigo-500 cursor-pointer">
+                        {role.title}
+                      </span>
+
                       </h3>
                       <p className=" max-w-4xl text-sm text-gray-500">
                         {role.description}

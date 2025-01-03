@@ -292,25 +292,7 @@ const AboutMe = () => {
         </div>
       </section>
 
-      {/* My Process Section */}
-      <section className="px-6 py-20 max-w-[1400px] mx-auto">
-        <h2 className="text-4xl md:text-5xl mb-12">My Process</h2>
-        <div className="grid md:grid-cols-4 gap-8">
-          {[ 
-            { icon: FaCoffee, title: "Discovery", description: "Understanding your needs and goals" },
-            { icon: FaUsers, title: "Collaboration", description: "Working closely with you to refine ideas" },
-            { icon: FaStar, title: "Creation", description: "Bringing concepts to life with precision" },
-            { icon: FaArrowRight, title: "Delivery", description: "Launching your project with ongoing support" },
-          ].map((step, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <step.icon className="w-12 h-12 mb-4 text-[#4169E1]" />
-              <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-              <p className="text-gray-600">{step.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-      <ExtracurricularActivities/>
+          <ExtracurricularActivities/>
       <Certificates/>
 
       {/* Call to Action Section */}
@@ -326,7 +308,7 @@ const AboutMe = () => {
       {/* Footer */}
       <footer className="px-6 py-6 bg-gray-100">
         <div className="max-w-[1400px] mx-auto flex flex-col justify-center items-center text-center">
-          <p className="text-sm text-gray-600">© 2024 Code by Zakaria. All rights reserved.</p>
+          <p className="text-sm text-gray-600">© 2025 Code by Zakaria. All rights reserved.</p>
         </div>
       </footer>
       <MagnetoButton isVisible={isButtonVisible} toggleSidebar={() => setSidebarVisible(!sidebarVisible)} />

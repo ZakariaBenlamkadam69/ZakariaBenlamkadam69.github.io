@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import copyright from './Images/copyright1.png';
 import gsap from 'gsap';
 import MagnetoButton from './MagnetoButton';
-
+import './Work.css'
 
 export default function Work() {
 
@@ -63,7 +63,7 @@ export default function Work() {
         let boundBox = element.getBoundingClientRect();
         const newX = ((event.clientX - boundBox.left) / element.offsetWidth - 0.5) * strength;
         const newY = ((event.clientY - boundBox.top) / element.offsetHeight - 0.5) * strength;
-        
+
         gsap.to(element, {
             duration: 0.5,
             x: newX,
@@ -110,8 +110,9 @@ export default function Work() {
 
   const filteredProjects = projects.filter((project) => {
     if (filter === "All") return true;
-    return project.services.toLowerCase().includes(filter.toLowerCase());
+    return project.services.some(service => service.toLowerCase().includes(filter.toLowerCase()));
   });
+  
 
   useEffect(() => {
     const textContainer = document.querySelector('.text-container2');
@@ -225,20 +226,20 @@ export default function Work() {
 
         <div className="mb-12 flex items-center justify-between">
           <div className="flex gap-4">
-            {["All", "Data Analysis", "Data Engineering"].map((item) => (
+            {["All", "Data Analysis", "Data Engineering", "Data Science"].map((item) => (
               <button
                 key={item}
                 onClick={() => setFilter(item)}
-                className={`rounded-full px-6 py-2 text-sm transition-colors ${
+                className={`rounded-full px-6 py-2 text-sm transition-colors center-button1 ${
                   filter === item
-                    ? "bg-primary text-primary-foreground"
+                    ? "bg-primary text-primary-foreground selected"
                     : "hover:bg-muted"
                 }`}
               >
                 {item}
                 {item !== "All" && (
                   <span className="ml-1 text-xs">
-                    {item === "Data Analysis" ? "7" : "11"}
+                    {item === "Data Analysis" ? "4" : item === "Data Science" ? "3": "2"}
                   </span>
                 )}
               </button>
@@ -272,20 +273,24 @@ export default function Work() {
         {viewMode === "list" ? (
           <div className="divide-y">
             <div className="grid grid-cols-4 py-4 text-sm text-muted-foreground">
-              <div>PROJECT</div>
-              <div>TOOLS</div>
-              <div>SERVICES</div>
-              <div>YEAR</div>
+              <div className="px-3">PROJECT</div>
+              <div className="px-3">TOOLS</div>
+              <div className="px-3">SERVICES</div>
+              <div className="px-3">YEAR</div>
             </div>
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
                 className="grid grid-cols-4 py-8 hover:bg-muted/50"
               >
-                <div className="text-xl">{project.name}</div>
-                <div>{project.tools}</div>
-                <div>{project.services}</div>
-                <div>{project.year}</div>
+                <div className="text-xl p-3">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    {project.name}
+                  </a>
+                </div>
+                <div className="text-xl p-3">{project.tools}</div>
+                <div className="text-xl p-3">{project.services.join(', ')}</div>
+                <div className="text-xl p-3">{project.year}</div>
               </div>
             ))}
           </div>
@@ -293,11 +298,11 @@ export default function Work() {
           <div className="grid grid-cols-2 gap-8">
             {filteredProjects.map((project) => (
               <div key={project.id} className="space-y-4">
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="aspect-[4/2] overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-full object-cover transition-transform duration-300 hover:scale-105"
                   />
                 </div>
                 <h2 className="text-xl">{project.name}</h2>

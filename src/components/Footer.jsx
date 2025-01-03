@@ -123,7 +123,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 gap-8 text-sm text-zinc-400 sm:grid-cols-2 lg:grid-cols-3">
               <div className="space-y-2">
                 <p className="text-xs uppercase">VERSION</p>
-                <p>2024 © Edition</p>
+                <p>2025 © Edition</p>
               </div>
               <div className="space-y-2">
                 <p className="text-xs uppercase">LOCAL TIME</p>

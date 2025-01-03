@@ -1,0 +1,54 @@
+.center-button1 {
+  font-family: "Montreal", sans-serif;
+  background-color: #f3f3f3;
+  color: #14191e;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  box-shadow: 0 0 0 0.2px #14191e;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+  overflow: hidden;
+  transition: color 0.8s ease-in-out;
+  top: 20px;
+}
+
+.center-button1::before {
+  content: "";
+  position: absolute;
+  bottom: -200%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.5);
+  width: 200%;
+  height: 200%;
+  background-color: #4a4a58;
+  border-radius: 50%;
+  transition: transform 0.8s ease-in-out, bottom 0.8s ease-in-out;
+  z-index: -1;
+}
+
+.center-button1:hover::before {
+  bottom: 0;
+  transform: translateX(-50%) scale(2);
+}
+
+.center-button1:hover {
+  color: #f3f3f3;
+}
+
+.center-button1:not(:hover)::before {
+  bottom: -200%;
+  transform: translateX(-50%) scale(0.5);
+}
+
+.center-button1 .text {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.center-button1.selected {
+  background-color: #4a4a58; /* Green background for selected */
+  color: white; /* Text color for selected */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+}

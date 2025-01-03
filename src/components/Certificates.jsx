@@ -15,8 +15,8 @@ const Certificates = () => {
     `${process.env.PUBLIC_URL}/certificates/certificate4.png`,
     `${process.env.PUBLIC_URL}/certificates/certificate5.png`,
     `${process.env.PUBLIC_URL}/certificates/certificate6.png`,
-    `${process.env.PUBLIC_URL}/certificates/certificate7.png`,
-    `${process.env.PUBLIC_URL}/certificates/certificate8.png`,
+    `${process.env.PUBLIC_URL}/certificates/certificate7.png`
+    
   ];
 
   // Duplicate the images for infinite scroll effect
@@ -25,7 +25,7 @@ const Certificates = () => {
   return (
     <section id='certificates' className="featured-certificates">
       <div className="container">
-        <h2 className="text-4xl md:text-5xl mb-12 mx-6">Certificates</h2>
+        <h2 className="text-4xl md:text-5xl my-12 mx-6">Certificates</h2>
 
         <div className="certificate-grid">
           <div className="certificate-line">
