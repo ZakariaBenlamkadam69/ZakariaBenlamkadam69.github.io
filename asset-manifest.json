@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.8b77fb6a.css",
-    "main.js": "/static/js/main.e3d3e5c8.js",
+    "main.css": "/static/css/main.5d505b3a.css",
+    "main.js": "/static/js/main.45134f7a.js",
     "static/media/zakaria1.png": "/static/media/zakaria1.a0ecefefd7822f275ff8.png",
     "static/media/Roboto-Medium.ttf": "/static/media/Roboto-Medium.e73e917f7bfa48666e00.ttf",
     "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.27f62b53b93858475a7f.ttf",
@@ -9,11 +9,11 @@
     "static/media/copyright.png": "/static/media/copyright.46ad38a4b697ef886c04.png",
     "static/media/copyright1.png": "/static/media/copyright1.6778a20efbe0a15e5dfc.png",
     "index.html": "/index.html",
-    "main.8b77fb6a.css.map": "/static/css/main.8b77fb6a.css.map",
-    "main.e3d3e5c8.js.map": "/static/js/main.e3d3e5c8.js.map"
+    "main.5d505b3a.css.map": "/static/css/main.5d505b3a.css.map",
+    "main.45134f7a.js.map": "/static/js/main.45134f7a.js.map"
   },
   "entrypoints": [
-    "static/css/main.8b77fb6a.css",
-    "static/js/main.e3d3e5c8.js"
+    "static/css/main.5d505b3a.css",
+    "static/js/main.45134f7a.js"
   ]
 }
