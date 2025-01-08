@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import './Footer.css'
 import { gsap } from 'gsap';
 import profileImage from './Images/zakaria1.png';
+import { Link } from "react-router-dom"; 
+
 
 
 export default function Footer() {
@@ -97,7 +99,7 @@ export default function Footer() {
 
             <div className="absolute top-0 left-10"> {/* Apply absolute positioning here */}
               <button className="button-get" size="lg">
-              <span className="text">Get in touch</span>              </button>
+              <Link to="/contact" className="text">Get in touch</Link>              </button>
             </div>
           </div>
 
@@ -132,16 +134,16 @@ export default function Footer() {
               <div className="space-y-2">
                 <p className="text-xs uppercase">SOCIALS</p>
                 <div className="flex gap-4">
-                  <a href="#" className="hover:text-zinc-100">
+                  <a href="https://github.com/ZakariaBenlamkadam/" className="hover:text-zinc-100">
                     Github
                   </a>
-                  <a href="#" className="hover:text-zinc-100">
+                  <a href="https://www.instagram.com/aakaa_riii/" className="hover:text-zinc-100">
                     Instagram
                   </a>
-                  <a href="#" className="hover:text-zinc-100">
+                  <a href="https://medium.com/@benlamkadamzakaria" className="hover:text-zinc-100">
                     Medium
                   </a>
-                  <a href="#" className="hover:text-zinc-100">
+                  <a href="https://www.linkedin.com/in/zakaria-benlamkadam/" className="hover:text-zinc-100">
                     LinkedIn
                   </a>
                 </div>

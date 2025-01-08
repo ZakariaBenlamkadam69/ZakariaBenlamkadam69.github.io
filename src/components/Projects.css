@@ -87,3 +87,13 @@ img.absolute {
   height: 100%;
   overflow: hidden; /* Prevents overflowing of image */
 }
+
+
+.project-card {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1); /* Default scale */
+}
+
+.project-card:hover {
+  transform: scale(1.05); /* Scaled up on hover */
+}

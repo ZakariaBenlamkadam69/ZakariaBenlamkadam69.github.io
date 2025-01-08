@@ -11,7 +11,7 @@
   z-index: 1000;
   overflow: hidden;
   transition: color 0.8s ease-in-out;
-  top: 20px;
+  
 }
 
 .center-button1::before {
@@ -51,4 +51,12 @@
   background-color: #4a4a58; /* Green background for selected */
   color: white; /* Text color for selected */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+}
+.projects-card {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1); /* Default scale */
+}
+
+.projects-card:hover {
+  transform: scale(1.05); /* Scaled up on hover */
 }

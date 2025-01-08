@@ -1,14 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Helmet } from 'react-helmet'; // Importing Helmet
+import { Helmet } from 'react-helmet'; 
 import Main from './components/Main';
 import AboutMe from './components/AboutMe';
 import Work from './components/Work';
 import Contact from './components/Contact';
+import ScrollToTop from './components/ScrollToTop';
+
 import './App.css'
 function App() {
   return (
     <Router>
+    <ScrollToTop />
     <div className="no-scrollbar">
       <Routes>
         <Route 

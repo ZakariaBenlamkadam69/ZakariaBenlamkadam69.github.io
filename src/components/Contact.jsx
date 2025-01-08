@@ -319,7 +319,7 @@ function Contact() {
             </div>
 
             {/* Submit Button */}
-            <div className="flex justify-center pt-16">
+            <div className="flex justify-center">
               <button
                 type="submit"
                 className="send-button"
@@ -331,51 +331,51 @@ function Contact() {
         </div>
 
         {/* Right column */}
-        <div className="lg:w-1/3 mt-12 lg:mt-0">
+        <div className='column-right'>
           <div className="mb-12">
-            <img src="zakaria1.png" alt="Profile1" className="rounded-full w-24 h-24" />
+            <img src="zakaria1.png" alt="Profile1" className="rounded-full w-[130px] h-[130px]" />
           </div>
 
-          <div className="space-y-12 text-sm">
-            <div>
-              <h3 className="text-gray-500 mb-2">CONTACT DETAILS</h3>
-              <a
+          <div className="space-y-12 text-sm mt-6">
+            <div className="right-column">
+              <h3 className="text-gray-500 mb-2 text-xl">CONTACT DETAILS</h3>
+              <span><a
                 href="mailto:benlamkadamzakaria@gmail.com"
-                className="inline-flex px-2  text-sm "
+                className="inline-flex text-lg"
               >
-                benlamkadamzakaria@gmail.com
-              </a>
+                 benlamkadamzakaria@gmail.com
+              </a></span>
               <br />
               <a
                 href="tel:+2120624249968"
-                className="inline-flex  px-2  text-sm "
+                className="inline-flex text-lg "
               >
                 +212 624 24 99 68
               </a>
             </div>
             <div>
-              <h3 className="text-gray-500 mb-2">BUSINESS DETAILS</h3>
-              <p>Benlamkadam Zakaria</p>
-              <p>+212 624249998</p>
+              <h3 className="text-gray-500 mb-2 text-xl">BUSINESS DETAILS</h3>
+              <p className='text-lg'>Benlamkadam Zakaria</p>
+              <p className='text-lg'>+212 624 24 99 98</p>
               
-              <p>Location: RABAT</p>
+              <p className='text-lg'>Location: RABAT</p>
             </div>
             <div>
-              <h3 className="text-gray-500 mb-2">SOCIALS</h3>
+              <h3 className="text-gray-500 mb-2 text-xl">SOCIALS</h3>
               <ul className="space-y-1">
                 
                 <li>
-                  <a href="#" className="hover:text-gray-300">
-                    Instagram
+                  <a href="https://github.com/ZakariaBenlamkadam/" className="hover:text-gray-300 text-lg" target="_blank" rel="noopener noreferrer">
+                    Github
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-300">
-                    Twitter
+                  <a href="https://medium.com/@benlamkadamzakaria" className="hover:text-gray-300 text-lg" target="_blank" rel="noopener noreferrer">
+                    Medium
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-300">
+                  <a href="https://www.linkedin.com/in/zakaria-benlamkadam/" className="hover:text-gray-300 text-lg" target="_blank" rel="noopener noreferrer">
                     LinkedIn
                   </a>
                 </li>
@@ -386,19 +386,9 @@ function Contact() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-32 flex justify-between text-sm text-gray-500">
-        
-        <div className="flex space-x-8 right-3">
-          
-          <a href="#" className="hover:text-gray-300">
-            Instagram
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            Twitter
-          </a>
-          <a href="#" className="hover:text-gray-300">
-            LinkedIn
-          </a>
+      <footer className="px-6 py-6 ">
+        <div className="max-w-[1400px] mx-auto flex flex-col justify-center items-center text-center">
+          <p className="text-sm text-gray-600">© 2025 Code by Zakaria. All rights reserved.</p>
         </div>
       </footer>
     </div>

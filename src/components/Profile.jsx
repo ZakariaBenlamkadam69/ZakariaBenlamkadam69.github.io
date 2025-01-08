@@ -179,7 +179,7 @@ const Profile = (props) => {
       <div className="arrow-container">
         <img src={arrowImage} alt="Arrow Down" className="arrow-image" />
         <div className="description">
-          <div className="engineer-text">Data & Software </div>
+          <div className="engineer-text">BI & Data </div>
           <div className="engineer-text">Engineering Student</div>
         </div>
       </div>

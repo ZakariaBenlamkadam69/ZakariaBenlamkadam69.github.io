@@ -6,6 +6,8 @@ import Projects from './Projects';
 import Footer from './Footer';
 import MagnetoButton from './MagnetoButton';
 import gsap from 'gsap';
+import { Link } from "react-router-dom"; 
+
 
 
 export default function Main() {
@@ -136,18 +138,18 @@ export default function Main() {
         <div className="h-px bg-zinc-500 my-4 mx-6" />
       </div>
           <ul>
-            <li className='sidebar-li'><a href="/">Home</a></li>
-            <li className='sidebar-li'><a href="/work">Work</a></li>
-            <li className='sidebar-li'><a href="/about">About</a></li>
-            <li className='sidebar-li'><a href="/contact">Contact</a></li>
+            <li className='sidebar-li'><Link to="/">Home</Link></li>
+            <li className='sidebar-li'><Link to="/work">Work</Link></li>
+            <li className='sidebar-li'><Link to="/about">About</Link></li>
+            <li className='sidebar-li'><Link to="/contact">Contact</Link></li>
           </ul>
           <div className="socials">
             <p className="text-[0.7rem] text-zinc-500 mx-6">SOCIALS</p>
             <div className="flex flex-wrap gap-[-20px] mt-4  ">
-              <a href="https://www.awwwards.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Medium</a>
-              <a href="https://www.instagram.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://twitter.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Github</a>
-              <a href="https://www.linkedin.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://medium.com/@benlamkadamzakaria" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Medium</a>
+              <a href="https://www.instagram.com/aakaa_riii/" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://github.com/ZakariaBenlamkadam/" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Github</a>
+              <a href="https://www.linkedin.com/in/zakaria-benlamkadam/" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
         </div>

@@ -196,6 +196,34 @@ export default function Work() {
     };
   }, []);
 
+  useEffect(() => {
+    const buttons = document.querySelectorAll('.center-button1'); 
+  
+    const activateMagneto = (event, element, strength) => {
+      const bounds = element.getBoundingClientRect();
+      const offsetX = ((event.clientX - bounds.left) / element.offsetWidth - 0.5) * strength;
+      const offsetY = ((event.clientY - bounds.top) / element.offsetHeight - 0.5) * strength;
+  
+      gsap.to(element, { x: offsetX, y: offsetY, duration: 0.3, ease: 'power4.out' });
+    };
+  
+    const resetMagneto = (element) => {
+      gsap.to(element, { x: 0, y: 0, duration: 0.3, ease: 'power4.out' });
+    };
+  
+    buttons.forEach((element) => {
+      element.addEventListener('mousemove', (e) => activateMagneto(e, element, 20));
+      element.addEventListener('mouseleave', () => resetMagneto(element));
+    });
+  
+    return () => {
+      buttons.forEach((element) => {
+        element.removeEventListener('mousemove', (e) => activateMagneto(e, element, 20));
+        element.removeEventListener('mouseleave', () => resetMagneto(element));
+      });
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <header id="profile" className="container mx-auto px-4 py-8">
@@ -281,7 +309,7 @@ export default function Work() {
             {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="grid grid-cols-4 py-8 hover:bg-muted/50"
+                className="grid grid-cols-4 py-8 hover:bg-muted/50 projects-card"
               >
                 <div className="text-xl p-3">
                   <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover:underline">
@@ -311,6 +339,11 @@ export default function Work() {
           </div>
         )}
       </main>
+      <footer className="px-6 py-6 bg-gray-100">
+        <div className="max-w-[1400px] mx-auto flex flex-col justify-center items-center text-center">
+          <p className="text-sm text-gray-600">© 2025 Code by Zakaria. All rights reserved.</p>
+        </div>
+      </footer>
       <MagnetoButton isVisible={isButtonVisible} toggleSidebar={() => setSidebarVisible(!sidebarVisible)} />
       {sidebarVisible && (
         <>
@@ -322,18 +355,18 @@ export default function Work() {
         <div className="h-px bg-zinc-500 my-4 mx-6" />
       </div>
           <ul>
-            <li className='sidebar-li'><a href="/">Home</a></li>
-            <li className='sidebar-li'><a href="/work">Work</a></li>
-            <li className='sidebar-li'><a href="/about">About</a></li>
-            <li className='sidebar-li'><a href="/contact">Contact</a></li>
+            <li className='sidebar-li'><Link to="/">Home</Link></li>
+            <li className='sidebar-li'><Link to="/work">Work</Link></li>
+            <li className='sidebar-li'><Link to="/about">About</Link></li>
+            <li className='sidebar-li'><Link to="/contact">Contact</Link></li>
           </ul>
           <div className="socials">
             <p className="text-[0.7rem] text-zinc-500 mx-6">SOCIALS</p>
             <div className="flex flex-wrap gap-[-20px] mt-4  ">
-              <a href="https://www.awwwards.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Medium</a>
-              <a href="https://www.instagram.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://twitter.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Github</a>
-              <a href="https://www.linkedin.com" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://medium.com/@benlamkadamzakaria" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Medium</a>
+              <a href="https://www.instagram.com/aakaa_riii/" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://github.com/ZakariaBenlamkadam/" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">Github</a>
+              <a href="https://www.linkedin.com/in/zakaria-benlamkadam/" className="text-[12px] hover:text-zinc-300 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
         </div>

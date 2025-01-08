@@ -1,6 +1,8 @@
 import './Projects.css';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
+import { Link } from "react-router-dom"; 
+
 
 function Projects() {
   const projects = [
@@ -18,7 +20,7 @@ function Projects() {
     },
     {
       title: "Morrocan Content Opinion Poll",
-      category: "Data Analytics",
+      category: "Data Analysis",
       href: "https://github.com/ZakariaBenlamkadam/morrocan-content",
       image: "./architecture.png",
     },
@@ -100,7 +102,7 @@ function Projects() {
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group grid grid-cols-1 md:grid-cols-2 items-center gap-4 py-8"
+                className="group grid grid-cols-1 md:grid-cols-2 items-center gap-4 py-8 project-card"
               >
                 <h3 className="text-3xl md:text-5xl lg:text-4xl ml-[20%] font-bold tracking-tight transition-colors group-hover:text-muted-foreground">
                   {project.title}
@@ -116,7 +118,7 @@ function Projects() {
 
         <div className="center-button-container">
           <button className="center-button">
-            <a href="/work" className="text">More Projects</a>
+            <Link to="/work" className="text">More Projects</Link>
           </button>
         </div>
       </div>

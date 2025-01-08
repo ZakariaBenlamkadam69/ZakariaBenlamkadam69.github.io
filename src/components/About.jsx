@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import './About.css';
+import { Link } from "react-router-dom"; 
+
 
 export default function About() {
 
@@ -68,7 +70,7 @@ export default function About() {
             The combination of my passion for analysis and visualization positions me to transform complexity into clarity and impactful decisions.
           </p>
           <button className="about-button">
-            <a href="/about" className="text">About me</a>
+            <Link to="/about" className="text">About me</Link>
           </button>
 
         </div>
