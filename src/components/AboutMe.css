@@ -145,3 +145,10 @@
 .icon-container .icon:hover {
   color: #333; /* Color on hover */
 }
+@media (max-width: 500px) {
+  
+  .hover-container {
+    
+    margin-left: 0rem; /* Prevent images from overflowing */
+  }
+}

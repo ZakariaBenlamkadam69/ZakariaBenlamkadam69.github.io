@@ -246,7 +246,7 @@ export default function Work() {
       </header>
 
       <main className="container mx-auto px-4 py-12 md:mx-8 lg:mx-12">
-        <h1 className="mb-16 text-6xl font-medium leading-tight tracking-tight">
+        <h1 className="mb-16 text-6xl font-medium leading-tight tracking-tight crafting">
         Crafting innovative solutions 
           <br />
           with precision.
@@ -299,7 +299,7 @@ export default function Work() {
         </div>
 
         {viewMode === "list" ? (
-          <div className="divide-y">
+          <div className="divide-y table">
             <div className="grid grid-cols-4 py-4 text-sm text-muted-foreground">
               <div className="px-3">PROJECT</div>
               <div className="px-3">TOOLS</div>

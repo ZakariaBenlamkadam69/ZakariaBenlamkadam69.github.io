@@ -162,3 +162,16 @@
     gap: 100px;
   }
 }
+
+@media (max-width: 500px) {
+  .send-button {
+    left:-5%;
+  }
+  .column-right {
+    margin-top: 90px;
+    display: flex; /* Use flexbox for centering */
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+}
